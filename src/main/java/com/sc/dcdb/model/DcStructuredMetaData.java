@@ -9,7 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
+@Getter @Setter
 public class DcStructuredMetaData {
 	@Id
 	@GeneratedValue
@@ -22,35 +26,4 @@ public class DcStructuredMetaData {
 	@OneToMany
 	@JoinColumn(name="meta_data_id")
 	private List<DcMetaDataOfMetaData> metaData;
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getDescr() {
-		return descr;
-	}
-	public void setDescr(String descr) {
-		this.descr = descr;
-	}
-	public int getIsDeleted() {
-		return isDeleted;
-	}
-	public void setIsDeleted(int isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-	public List<DcMetaDataOfMetaData> getMetaData() {
-		return metaData;
-	}
-	public void setMetaData(List<DcMetaDataOfMetaData> metaData) {
-		this.metaData = metaData;
-	}
-	
 }
